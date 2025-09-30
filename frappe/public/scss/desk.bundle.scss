@@ -4,6 +4,7 @@
 @import "~frappe-charts/dist/frappe-charts.min";
 @import "~plyr/dist/plyr";
 @import "./desk/index";
+@import "./font-size"; // 确保这一行存在并正确导入
 
 @import "frappe/public/js/lib/leaflet/leaflet.css";
 @import "frappe/public/js/lib/leaflet_easy_button/easy-button.css";

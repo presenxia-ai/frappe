@@ -248,6 +248,10 @@ frappe.views.Workspace = class Workspace {
 	}
 
 	append_item(item, container) {
+		// 添加对item.title的检查
+		if (!item.title) return;
+
+
 		let is_current_page =
 			frappe.router.slug(item.title) == frappe.router.slug(this.get_page_to_show().name) &&
 			item.public == this.get_page_to_show().public;

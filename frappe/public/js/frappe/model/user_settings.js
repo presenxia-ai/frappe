@@ -55,3 +55,19 @@ frappe.get_user_settings = function (doctype, key) {
 	}
 	return settings;
 };
+
+frappe.get_user_settings = function (doctype, key) {
+	var settings = frappe.model.user_settings[doctype] || {};
+	if (key) {
+		settings = settings[key] || {};
+	}
+	return settings;
+};
+
+// 添加以下代码以在用户设置更新时触发事件
+$(document).on('frappe.ui.notifications.update_notification_count', function() {
+	// 当通知更新时重新应用字体大小
+	if (frappe.font_size_manager) {
+		frappe.font_size_manager.applyFontSize();
+	}
+});

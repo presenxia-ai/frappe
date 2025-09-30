@@ -101,7 +101,7 @@ class User(Document):
 		last_ip: DF.ReadOnly | None
 		last_known_versions: DF.Text | None
 		last_login: DF.ReadOnly | None
-		last_name: DF.Data | None
+		last_name: DF.Data
 		last_password_reset_date: DF.Date | None
 		last_reset_password_key_generated_on: DF.Datetime | None
 		list_sidebar: DF.Check
@@ -116,7 +116,7 @@ class User(Document):
 		new_password: DF.Password | None
 		notifications: DF.Check
 		onboarding_status: DF.SmallText | None
-		phone: DF.Data | None
+		phone: DF.Data
 		redirect_url: DF.SmallText | None
 		reset_password_key: DF.Data | None
 		restrict_ip: DF.SmallText | None
@@ -771,6 +771,15 @@ class User(Document):
 				"args": ["Form", self.doctype, self.name],
 			},
 		)
+	def get_font_size_class(self):
+		"""Returns the CSS class corresponding to the user's font size preference."""
+		font_size_mapping = {
+			"Small": "font-size-small",
+			"Medium": "font-size-medium",
+			"Large": "font-size-large",
+			"Extra Large": "font-size-extra-large"
+		}
+		return font_size_mapping.get(self.font_size, "")
 
 
 @frappe.whitelist()

@@ -104,3 +104,4 @@ import "./frappe/ui/chart.js";
 import "./frappe/ui/datatable.js";
 import "./frappe/ui/driver.js";
 import "./frappe/scanner";
+import "./font_size_manager"

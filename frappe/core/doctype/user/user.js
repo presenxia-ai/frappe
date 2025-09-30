@@ -367,6 +367,18 @@ frappe.ui.form.on("User", {
 			frappe.msgprint(__("Refreshing..."));
 			window.location.reload();
 		}
+		// 保存成功后，将字体大小设置持久化
+		if (frm.doc.font_size) {
+			// 更新 localStorage
+			localStorage.setItem('user_font_size', frm.doc.font_size);
+			// 更新 frappe.boot.user.font_size
+			if (frappe.boot && frappe.boot.user) {
+				frappe.boot.user.font_size = frm.doc.font_size;
+			}
+			// 触发字体更新事件
+			$(document).trigger('user_settings_updated');
+			// console.log("字体设置已保存并应用:", frm.doc.font_size);
+		}
 	},
 	setup_impersonation: function (frm) {
 		if (frappe.session.user === "Administrator" && frm.doc.name != "Administrator") {
@@ -401,6 +413,25 @@ frappe.ui.form.on("User", {
 					__("Confirm")
 				);
 			});
+		}
+	},
+	font_size: function (frm) {
+		// console.log("字体大小设置已更改:", frm.doc.font_size);
+		// 当字号更改时，只更新界面显示，不立即保存到数据库
+		if (frm.doc.name === frappe.session.user) {
+			// 临时更新界面显示，不持久化到 localStorage
+			const body = $('body');
+			body.removeClass('font-size-small font-size-medium font-size-large font-size-extra-large');
+
+			if (frm.doc.font_size && frm.doc.font_size !== 'Default') {
+				const className = `font-size-${frm.doc.font_size.toLowerCase().replace(' ', '-')}`;
+				body.addClass(className);
+			} else {
+				body.addClass('font-size-medium');
+			}
+
+			// 提示用户需要保存设置
+			// frappe.msgprint(__("字体已临时应用，点击保存按钮以持久化设置"));
 		}
 	},
 });
