@@ -174,7 +174,7 @@
       "label": "Last Name",
       "oldfieldname": "last_name",
       "oldfieldtype": "Data",
-      "reqd": 1
+      "reqd": 0
     },
     {
       "fieldname": "full_name",
@@ -290,7 +290,7 @@
       "fieldtype": "Data",
       "label": "Phone",
       "options": "Phone",
-      "reqd": 1
+      "reqd": 0
     },
     {
       "fieldname": "mobile_no",
