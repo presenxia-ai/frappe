@@ -1,3 +1,6 @@
+<!-- In your HTML template -->
+<script src="/assets/custom_app/js/ai_assistant.js"></script>
+
 <div class="sticky-top">
 	<header class="navbar navbar-expand" role="navigation">
 		<div class="container">
@@ -76,38 +79,46 @@
 						</button>
 					</li>
 					<li class="vertical-bar d-none d-sm-block"></li>
-					<li class="nav-item dropdown dropdown-help dropdown-mobile d-none d-lg-block">
-						<button
-							class="btn-reset nav-link"
-							data-toggle="dropdown"
-							aria-controls="toolbar-help"
-							aria-label="{{ __("Help Dropdown") }}"
-						>
+					<li class="nav-item d-lg-block">
+						<button class="btn-reset nav-link" TITLE="{{ __("Intelligent Assistant") }}" id="ai-assistant-button">
 							<span>
-								{{ __("Help") }}
-								<svg class="es-icon icon-xs"><use href="#es-line-down"></use></svg>
+<!--								{{ __("智能助手") }}-->
+								<svg class="es-icon icon-sm"><use href="#es-line-ai-assistant"></use></svg>
 							</span>
 						</button>
-						<div class="dropdown-menu dropdown-menu-right" id="toolbar-help" role="menu">
-							<div id="help-links"></div>
-							<div class="dropdown-divider documentation-links"></div>
-							{% for item in navbar_settings.help_dropdown %}
-								{% if (!item.hidden) { %}
-									{% if (item.route) { %}
-										<a class="dropdown-item" href="{{ item.route }}">
-											{%= __(item.item_label) %}
-										</a>
-									{% } else if (item.action) { %}
-										<button class="btn-reset dropdown-item" onclick="return {{ item.action }}">
-											{%= __(item.item_label) %}
-										</button>
-									{% } else { %}
-										<div class="dropdown-divider"></div>
-									{% } %}
-								{% } %}
-							{% endfor %}
-						</div>
 					</li>
+<!--					<li class="nav-item dropdown dropdown-help dropdown-mobile d-none d-lg-block">-->
+<!--						<button-->
+<!--							class="btn-reset nav-link"-->
+<!--							data-toggle="dropdown"-->
+<!--							aria-controls="toolbar-help"-->
+<!--							aria-label="{{ __("Help Dropdown") }}"-->
+<!--						>-->
+<!--							<span>-->
+<!--								{{ __("Help") }}-->
+<!--								<svg class="es-icon icon-xs"><use href="#es-line-down"></use></svg>-->
+<!--							</span>-->
+<!--						</button>-->
+<!--						<div class="dropdown-menu dropdown-menu-right" id="toolbar-help" role="menu">-->
+<!--							<div id="help-links"></div>-->
+<!--							<div class="dropdown-divider documentation-links"></div>-->
+<!--							{% for item in navbar_settings.help_dropdown %}-->
+<!--								{% if (!item.hidden) { %}-->
+<!--									{% if (item.route) { %}-->
+<!--										<a class="dropdown-item" href="{{ item.route }}">-->
+<!--											{%= __(item.item_label) %}-->
+<!--										</a>-->
+<!--									{% } else if (item.action) { %}-->
+<!--										<button class="btn-reset dropdown-item" onclick="return {{ item.action }}">-->
+<!--											{%= __(item.item_label) %}-->
+<!--										</button>-->
+<!--									{% } else { %}-->
+<!--										<div class="dropdown-divider"></div>-->
+<!--									{% } %}-->
+<!--								{% } %}-->
+<!--							{% endfor %}-->
+<!--						</div>-->
+<!--					</li>-->
 					<li class="nav-item dropdown dropdown-navbar-user dropdown-mobile">
 						<button
 							class="btn-reset nav-link"

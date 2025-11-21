@@ -1802,3 +1802,5 @@ Object.assign(frappe.utils, {
 		}
 	},
 });
+
+
