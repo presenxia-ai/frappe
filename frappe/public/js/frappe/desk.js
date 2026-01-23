@@ -156,6 +156,11 @@ frappe.Application = class Application {
 			csrf_token: frappe.csrf_token,
 			user: frappe.session.user,
 		});
+
+		if (localStorage.container_fullwidth !== "true") {
+			localStorage.container_fullwidth = "true";
+		}
+		frappe.ui.toolbar.set_fullwidth_if_enabled();
 	}
 
 	set_route() {
