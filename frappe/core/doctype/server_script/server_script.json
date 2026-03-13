@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_rename": 1,
  "autoname": "Prompt",
  "creation": "2019-09-30 11:56:57.943241",
  "doctype": "DocType",
@@ -151,7 +152,7 @@
    "link_fieldname": "server_script"
   }
  ],
- "modified": "2025-09-02 11:11:07.528661",
+ "modified": "2026-01-22 14:55:22.983056",
  "modified_by": "Administrator",
  "module": "Core",
  "name": "Server Script",
@@ -171,6 +172,7 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

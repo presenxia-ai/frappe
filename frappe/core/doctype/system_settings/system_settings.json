@@ -105,7 +105,10 @@
   "allow_error_traceback",
   "enable_telemetry",
   "search_section",
-  "link_field_results_limit"
+  "link_field_results_limit",
+  "show_absolute_datetime_in_timeline",
+  "api_logging_section",
+  "log_api_requests"
  ],
  "fields": [
   {
@@ -134,7 +137,6 @@
    "fieldname": "time_zone",
    "fieldtype": "Select",
    "label": "Time Zone",
-   "read_only": 1,
    "reqd": 1
   },
   {
@@ -739,8 +741,8 @@
  "icon": "fa fa-cog",
  "issingle": 1,
  "links": [],
- "modified": "2025-09-03 10:52:38.096662",
- "modified_by": "Administrator",
+ "modified": "2026-01-22 18:12:45.784237",
+ "modified_by": "zhangweida@gmail.com",
  "module": "Core",
  "name": "System Settings",
  "owner": "Administrator",
@@ -754,6 +756,7 @@
   }
  ],
  "quick_entry": 1,
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

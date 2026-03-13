@@ -9,7 +9,7 @@
  "hide_custom": 0,
  "icon": "users",
  "idx": 0,
- "is_hidden": 0,
+ "is_hidden": 1,
  "label": "Users",
  "links": [
   {
@@ -103,6 +103,7 @@
    "link_to": "Document Share Report",
    "link_type": "Report",
    "onboard": 0,
+   "report_ref_doctype": "DocShare",
    "type": "Link"
   },
   {
@@ -158,8 +159,8 @@
    "type": "Link"
   }
  ],
- "modified": "2024-01-02 15:39:13.811700",
- "modified_by": "Administrator",
+ "modified": "2026-02-28 02:46:39.470052",
+ "modified_by": "357236649@qq.com",
  "module": "Core",
  "name": "Users",
  "number_cards": [],
@@ -169,7 +170,7 @@
  "quick_lists": [],
  "restrict_to_domain": "",
  "roles": [],
- "sequence_id": 13.0,
+ "sequence_id": 29.0,
  "shortcuts": [
   {
    "label": "User",

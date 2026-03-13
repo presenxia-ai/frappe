@@ -91,6 +91,7 @@ class User(Document):
 		follow_created_documents: DF.Check
 		follow_liked_documents: DF.Check
 		follow_shared_documents: DF.Check
+		font_size: DF.Literal["Default", "Small", "Medium", "Large", "Extra Large"]
 		form_sidebar: DF.Check
 		full_name: DF.Data | None
 		gender: DF.Link | None
@@ -101,7 +102,7 @@ class User(Document):
 		last_ip: DF.ReadOnly | None
 		last_known_versions: DF.Text | None
 		last_login: DF.ReadOnly | None
-		last_name: DF.Data
+		last_name: DF.Data | None
 		last_password_reset_date: DF.Date | None
 		last_reset_password_key_generated_on: DF.Datetime | None
 		list_sidebar: DF.Check
@@ -116,7 +117,7 @@ class User(Document):
 		new_password: DF.Password | None
 		notifications: DF.Check
 		onboarding_status: DF.SmallText | None
-		phone: DF.Data
+		phone: DF.Data | None
 		redirect_url: DF.SmallText | None
 		reset_password_key: DF.Data | None
 		restrict_ip: DF.SmallText | None

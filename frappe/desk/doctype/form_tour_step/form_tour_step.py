@@ -36,21 +36,7 @@ class FormTourStep(Document):
 		parentfield: DF.Data
 		parenttype: DF.Data
 		popover_element: DF.Check
-		position: DF.Literal[
-			"Left",
-			"Left Center",
-			"Left Bottom",
-			"Top",
-			"Top Center",
-			"Top Right",
-			"Right",
-			"Right Center",
-			"Right Bottom",
-			"Bottom",
-			"Bottom Center",
-			"Bottom Right",
-			"Mid Center",
-		]
+		position: DF.Literal["Left", "Left Center", "Left Bottom", "Top", "Top Center", "Top Right", "Right", "Right Center", "Right Bottom", "Bottom", "Bottom Center", "Bottom Right", "Mid Center"]
 		title: DF.Data
 		ui_tour: DF.Check
 	# end: auto-generated types
