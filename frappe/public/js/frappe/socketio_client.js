@@ -115,7 +115,9 @@ class RealTimeClient {
 
 	get_host(port = 9000) {
 		let host = window.location.origin;
-		if (window.dev_server) {
+		// Check if we should use reverse proxy (HTTPS or non-dev environment)
+		// When using reverse proxy, socket.io should connect to same origin port
+		if (window.dev_server && window.location.protocol === "http:") {
 			let parts = host.split(":");
 			port = frappe.boot.socketio_port || port.toString() || "9000";
 			if (parts.length > 2) {
@@ -123,6 +125,7 @@ class RealTimeClient {
 			}
 			host = host + ":" + port;
 		}
+		// For HTTPS or when using reverse proxy, use the same origin (nginx will proxy to socket.io)
 		return host + `/${frappe.boot.sitename}`;
 	}
 

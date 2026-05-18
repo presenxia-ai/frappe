@@ -241,14 +241,6 @@ frappe.ui.form.ScriptManager = class ScriptManager {
 	}
 	log_error(caller, e) {
 		frappe.show_alert({ message: __("Error in Client Script."), indicator: "error" });
-		console.group && console.group();
-		console.log("----- error in client script -----");
-		console.log("method: " + caller);
-		console.log(e);
-		console.log("error message: " + e.message);
-		console.trace && console.trace();
-		console.log("----- end of error message -----");
-		console.group && console.groupEnd();
 	}
 	copy_from_first_row(parentfield, current_row, fieldnames) {
 		var data = this.frm.doc[parentfield];
